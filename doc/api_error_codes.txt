@@ -1,0 +1,8 @@
+Error codes for API
+
+0 - Unknown Error
+1 - One or more files are missing
+2 - Error uploading file
+3 - Invalid file sizes
+4 - Invalid CRC
+5 - No such profile

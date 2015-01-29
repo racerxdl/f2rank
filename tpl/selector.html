@@ -1,0 +1,62 @@
+<script src="js/jpak.js"></script>
+<script src="js/Base64.js"></script>
+<script src="jsselector/selector.js"></script>
+<script src="jsselector/looper.js"></script>
+<script src="jsselector/game.js"></script>
+<script src="jsselector/coord.js"></script>
+<script src="jsselector/levelbar.js"></script>
+<script src="jsselector/levelselector.js"></script>
+<script src="jsselector/objects.js"></script>
+<script src="jsselector/onetimeevent.js"></script>
+<script src="jsselector/skin.js"></script>
+<script src="jsselector/soundplayer.js"></script>
+<script src="jsselector/soundmanager.js"></script>
+<script src="jsselector/videoplayer.js"></script>
+<script src="jsselector/wheelitem.js"></script>
+<script src="jsselector/wheel.js"></script>
+<script src="jsselector/drawer.js"></script>
+<script type="text/javascript">
+	var PumpSelector, GameStats, vplay, gameCanvas, gameCtx;
+	var userid = "{USER_ID}";
+	var Modes = {
+		"SINGLE"			:	0,
+		"SINGLEPERFORMANCE"	:	64,
+		"DOUBLE"			:	128,
+		"DOUBLEPERFORMANCE"	:	192
+	};
+	window.performance = window.performance || {};
+	performance.now = (function() {
+	  return performance.now       ||
+			 performance.mozNow    ||
+			 performance.msNow     ||
+			 performance.oNow      ||
+			 performance.webkitNow ||
+			 function() { return new Date().getTime(); };
+	})();
+	
+	function Init()	{
+	    gameCanvas = document.getElementById("gamescreen");
+	    gameCtx = gameCanvas.getContext("2d");
+	
+		PumpSelector = new PUMP_SELECTOR.Game({canvas: gameCanvas});
+
+		Animate();
+	}
+	function LoadSongRank(songid, mode, level)	{
+		window.location = "{SITE_URL}?page=songrank&songid="+parseInt(songid, 16)+"&level="+level+"&mode="+Modes[mode]+"&userid={USER_ID}";
+	}
+	function Animate()	{
+		requestAnimationFrame( Animate );   // 60 FPS
+		PumpSelector.Looper.loop();
+	}
+	$( document ).ready(function() {
+	  Init();
+	});
+</script>
+<div class="center-block text-center" style="max-width: 900px">
+	<h3>Select Song (Pump It Up Visualizer)</h3>
+	This is based on <a href="https://github.com/racerxdl/">Lucas Teske</a> project at GitHub. You can see the source code here: <a href="https://github.com/racerxdl/piuvisual/">https://github.com/racerxdl/piuvisual/</a><BR>
+	Thanks Lucas for this nice project shared with us! Greetings from HUEBR's Team :D <BR> <BR>
+	<div id="videoHolder"></div>
+	<canvas width=640 height=480 id="gamescreen"></canvas>
+</div>

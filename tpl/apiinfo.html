@@ -1,0 +1,84 @@
+<div class="center-block text-center" style="max-width: 900px">
+	<h3>This has been delivered to you by:</h3><BR>
+	<img src="{SITE_URL}/img/logo.png"/>
+	<BR/><BR/>
+	<BR/>
+	<div class="panel panel-info">
+		<div class="panel-heading"><b>API Information</b></div>
+		<div class="panel-body">
+			<div class="panel panel-success">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">How the API works?</h3>
+			  </div>
+			  <div class="panel-body text-justify">
+			  	POST/GET Request at {SITE_URL} , the response will be at JSON.<BR>
+			  	You need to make a request with arguments <B>page</B> as <b>api</b> and <B>cmd</B> as the command you want to perform.<BR>
+			  	The parameters can be both POST and GET requests.
+			  </div>
+			</div>
+			<div class="panel panel-info">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">What are the available commands?</h3>
+			  </div>
+			  <div class="panel-body text-justify">
+			  	See examples for more details
+			  	<ul>
+			  		<li><B>savedecode</B> - Decodes the save and send back the data.</li>
+			  		<li><B>exptop100</B> - Returns the Experience TOP 100</li>
+			  		<li><B>caloriestop100</B> - Returns the Calories TOP 100</li>
+			  		<li><B>scoretop100</B> - Returns the Score TOP 100</li>
+			  		<li><B>missiontop100</B> - Returns the Mission TOP 100</li>
+			  		<li><B>profile</B> - Returns the saved profile on our servers</li>
+			  		<li><B>genball</B> - Generates a Level Ball PNG</li>
+			  		<li><B>ucs</B> - Returns a JSON UCS data used by PIU Visual</li> <!-- ?page=api&cmd=ucs&id=6 -->
+			  		<li><B>getucsfile</B> - Returns the UCS file</li>
+			  		<li><B>mostplayedsongs</B> - Returns the most played songs</li>
+			  		<li><B>mostplayedcharts</B> - Returns the most played charts</li> 
+			  	</ul>
+			  </div>
+			</div>
+			<div class="panel panel-danger">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Error codes</h3>
+			  </div>
+			  <div class="panel-body text-justify">
+			  	<ul>
+				  	<li><B>0</B> - Unknown Error</li>
+					<li><B>1</B> - One or more files are missing</li>
+					<li><B>2</B> - Error uploading file</li>
+					<li><B>3</B> - Invalid file sizes</li>
+					<li><B>4</B> - Invalid CRC</li>
+					<li><B>5</B> - No such profile</li>
+			  	</ul>
+			  </div>
+			</div>
+			<div class="panel panel-info">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Examples</h3>
+			  </div>
+			  <div class="panel-body text-justify">
+			  	<ul>
+			  		<li><B>savedecode</B> - <a href="http://codepad.org/QzyT7IFp">http://codepad.org/QzyT7IFp</a></li>
+			  		<li><B>exptop100</B> - <a href="{SITE_URL}?page=api&cmd=exptop100">{SITE_URL}?page=api&cmd=exptop100</a></li>
+			  		<li><B>caloriestop100</B> - <a href="{SITE_URL}?page=api&cmd=caloriestop100">{SITE_URL}?page=api&cmd=caloriestop100</a></li>
+			  		<li><B>scoretop100</B> - <a href="{SITE_URL}?page=api&cmd=scoretop100">{SITE_URL}?page=api&cmd=scoretop100</a></li>
+			  		<li><B>missiontop100</B> - <a href="{SITE_URL}?page=api&cmd=missiontop100">{SITE_URL}?page=api&cmd=missiontop100</a></li>
+			  		<li><B>profile</B> - <a href="{SITE_URL}?page=api&cmd=profile&userid=TROLLOLO">{SITE_URL}?page=api&cmd=profile&userid=TROLLOLO</a></li>
+			  		<li><B>genball</B> - {SITE_URL}?page=api&cmd=genball&level=LEVEL&mode=MODE <BR> 
+			  			<center>
+			  				<img src="{SITE_URL}?page=api&cmd=genball&level=99&mode=S"/>
+			  				<img src="{SITE_URL}?page=api&cmd=genball&level=??&mode=SP"/>
+			  				<img src="{SITE_URL}?page=api&cmd=genball&level=!!&mode=D"/>
+			  				<img src="{SITE_URL}?page=api&cmd=genball&level=19&mode=DP"/>
+		  				</center>
+		  			</li>
+		  			<li><B>ucs</B> - <a href="{SITE_URL}?page=api&cmd=ucs&id=6 ">{SITE_URL}?page=api&cmd=ucs&id=6 </a></li>
+		  			<li><B>getucsfile</B> - <a href="{SITE_URL}?page=api&cmd=getucsfile&id=6 ">{SITE_URL}?page=api&cmd=getucsfile&id=6 </a></li>
+			  		<li><B>mostplayedsongs</B> - <a href="{SITE_URL}?page=api&cmd=mostplayedsongs">{SITE_URL}?page=api&cmd=mostplayedsongs</a></li>
+			  		<li><B>mostplayedcharts</B> - <a href="{SITE_URL}?page=api&cmd=mostplayedcharts">{SITE_URL}?page=api&cmd=mostplayedcharts</a></li>
+			  	</ul>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>

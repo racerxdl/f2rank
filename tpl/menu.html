@@ -1,0 +1,62 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainmenu">
+      <span class="sr-only">Desativar Barra</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="{SITE_URL}" ><img src="{SITE_URL}img/logo.png" height=22 border=0/></a>
+  </div>
+  <div class="collapse navbar-collapse" id="mainmenu">
+    <ul class="nav navbar-nav">
+    	<li class="dropdown">
+    		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Main Menu <b class="caret"></b></a>
+    		<ul class="dropdown-menu">
+    			<li><a href="{SITE_URL}?page=upprof"><span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;&nbsp;Upload Profile</a></li>
+    			<li><a href="{SITE_URL}?page=senducs"><span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;&nbsp;Upload UserCustomStep (UCS)</a></li>
+    		</ul>
+    	</li>
+    	{USER_MENU}
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;Rankings <b class="caret"></b></a>
+		  	<ul class="dropdown-menu">
+		  		<li><a href="{SITE_URL}?page=top100exp">		<span class="glyphicon glyphicon-magnet"></span>&nbsp;&nbsp;Top 100 EXP</a></li>
+		  		<li><a href="{SITE_URL}?page=top100score">		<span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;Top 100 Score</a></li>
+		  		<li><a href="{SITE_URL}?page=top100calories">	<span class="glyphicon glyphicon-fire"></span>&nbsp;&nbsp;Top 100 Calories</a></li>
+		  		<li><a href="{SITE_URL}?page=top100mission">	<span class="glyphicon glyphicon-plane"></span>&nbsp;&nbsp;Top 100 Mission</a></li>
+				<li><a href="{SITE_URL}?page=mostplayedsongs">	<span class="glyphicon glyphicon-music"></span>&nbsp;&nbsp;Top 100 Most Played Songs</a></li>
+		  		<li><a href="{SITE_URL}?page=mostplayedcharts">	<span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Top 100 Most Played Charts</a></li>
+		  		<li><a href="{SITE_URL}?page=selector">		<span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;<B>Search Song (New way)</B></a></li>
+		  		<li><a href="{SITE_URL}?page=songselect">		<span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;Search Song (Old way)</a></li>
+	  		</ul>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;UCS <b class="caret"></b></a>
+		  	<ul class="dropdown-menu">
+		  		<li><a href="{SITE_URL}?page=lastucs">			<span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;Last sent</a></li>
+		  		<li><a href="{SITE_URL}?page=mostdownloadeducs"><span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;Most downloaded</a></li>
+		  		<li><a href="{SITE_URL}?page=mostvieweducs">	<span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;Most viewed</a></li>
+	  		</ul>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;Information <b class="caret"></b></a>
+		  	<ul class="dropdown-menu">
+		  		<li><a href="{SITE_URL}?page=info">	<span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;About / FAQ</a></li>
+		  		<li><a href="https://www.facebook.com/f2unnoficialranking">		<span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;More Info</a>
+		  		<li><a href="{SITE_URL}?page=apiinfo"><span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;API Information</a></li>
+		  	</ul>
+		</li>
+    </ul>
+    <form class="navbar-form navbar-left" role="search" action="{SITE_URL}">
+        <div class="form-group">
+          <input type="text" name="userid" class="form-control" placeholder="Search Profile"/>
+          <input type="hidden" name="page" value="rank" class="form-control" placeholder="Search Profile"/>
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+    	<li><p class="navbar-text">{LOGDATA}</p></li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,204 @@
+<script src="js/jpak.js"></script>
+<script src="jspump/pump.js"></script>
+<script src="jspump/gl.js"></script>
+<script src="jspump/gldrawer.js"></script>
+<script src="jspump/ucsparser.js"></script>
+<script src="jspump/nxparser.js"></script>
+<script src="jspump/sentinel.js"></script>
+<script src="jspump/step.js"></script>
+<script src="jspump/sound.js"></script>
+<script src="jspump/video.js"></script>
+<script src="jspump/objects.js"></script>
+<script src="jspump/scene.js"></script>
+<script src="jspump/drawer.js"></script>
+<script src="jspump/looper.js"></script>
+<script src="jspump/skin.js"></script>
+<script src="jspump/loader.js"></script>
+<script src="jspump/effectbank.js"></script>
+<script src="jspump/game.js"></script>
+<script src="jspump/shaders.js"></script>
+<script type="text/javascript">
+	var PumpGame, _UCS;
+	var requestAnimFrameA = (function(){
+	  return  function( callback ){
+			    window.setTimeout(callback, 1000 / 240);
+			  };
+	})();
+	window.requestAnimFrame = (function(){
+	  return  window.requestAnimationFrame       ||
+	          window.webkitRequestAnimationFrame ||
+	          window.mozRequestAnimationFrame    ||
+	          function( callback ){
+	            window.setTimeout(callback, 1000 / 60);
+	          };
+	})();
+	window.performance = window.performance || {};
+	performance.now = (function() {
+	  return performance.now       ||
+			 performance.mozNow    ||
+			 performance.msNow     ||
+			 performance.oNow      ||
+			 performance.webkitNow ||
+			 function() { return new Date().getTime(); };
+	})();
+	function Init()	{
+		var GameParameters = PUMPER.parseHashes();
+		var DisableWEBGL = {DISABLE_WEBGL};
+		if(DisableWEBGL)	
+			PUMPER.Globals.WebGL = false;
+		
+	    if($("#webglinfo") !== undefined)	{
+	    	if(PUMPER.Globals.WebGL)
+	    		$("#webglinfo").html("WebGL <b>Enabled</b><BR>Not Running well? Try the <a href=\"{SITE_URL}?page=ucsview&id={UCS_ID}&disable_webgl\">Canvas Version</a>");
+	    	else
+	    		$("#webglinfo").html("WebGL <b>Disabled</b><BR>Want to try the <a href=\"{SITE_URL}?page=ucsview&id={UCS_ID}\">WebGL Version</a>?");	
+	    }
+		PUMPER.ScrollSpeed = (GameParameters.scrollSpeed!==undefined)?parseInt(GameParameters.scrollSpeed):4;
+		PumpGame = new PUMPER.GameLoader({"loadtype" : PUMPER.TypeF2RankUCS, "loadargs" : {"ucsurl":"{SITE_URL}?page=api&cmd=ucs&id={UCS_ID}","songid" : '{SONG_ID}'}, "canvasname" : "gamescreen"});
+	    PumpGame.Load();
+	}
+
+	$( document ).ready(function() {
+	  Init();
+	});
+</script>
+<style type="text/css">
+
+	#gcontainer	{
+		width: 640px;
+		height: 480px;
+	    position: relative;
+	    margin: 0 auto;
+	}
+	#fblike_frame	{
+ 		position: absolute;
+    	margin: 0 auto;
+    	z-index: 2;
+    	bottom: 50px;
+    	right: 10px;
+    	color: white;
+    	text-align: right;
+    	text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+	}
+	#ucsbuttons	{
+ 		position: absolute;
+    	margin: 0 auto;
+    	z-index: 2;
+    	bottom: 10px;
+    	right: 10px;
+	}
+	#infohead	{
+ 		position: absolute;
+    	margin: 0 auto;
+    	z-index: 2;
+    	top: 8px;
+    	left: 10px;
+    	width: 620px;
+    	color: white;
+    	text-align: center;
+    	text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+	}
+	#webglinfo	{
+ 		position: absolute;
+    	margin: 0 auto;
+    	z-index: 2;
+    	bottom: 8px;
+    	left: 10px;
+    	color: white;
+    	text-align: left;
+    	text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;	
+	}
+	#levelball	{
+ 		position: absolute;
+    	margin: 0 auto;
+    	z-index: 2;
+    	top: 5px;
+    	left: 5px;
+    	color: white;
+    	text-align: left;
+    	text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;	
+	}
+	#gamescreen	{
+		position: absolute; z-index: 1;
+		left: 0px;
+		-webkit-border-top-left-radius: 5px;
+		-webkit-border-top-right-radius: 5px;
+		-moz-border-radius-topleft: 5px;
+		-moz-border-radius-topright: 5px;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+	#pumperlog	{
+		width: 640px;
+		height: 80px;
+		overflow-y: scroll;
+		text-align: left;
+    	margin: 0 auto;
+    	background-color: black;
+    	-webkit-border-bottom-right-radius: 5px;
+		-webkit-border-bottom-left-radius: 5px;
+		-moz-border-radius-bottomright: 5px;
+		-moz-border-radius-bottomleft: 5px;
+		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 5px;
+	}
+	#download	{
+ 		position: absolute;
+    	margin: 0 auto;
+    	z-index: 2;
+    	top: 8px;
+    	right: 8px;
+    	color: white;
+    	text-align: left;
+    	font-size: 32px;
+    	text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+	}
+	.logstyle	{
+		color: #0066CC;
+		font-weight: bold;
+	}
+	.debugstyle	{
+		color: #CC6600;
+		font-weight: bold;
+	}
+	.logstyle_content	{
+		color: #0099FF;
+	}
+	.debugstyle_content	{
+		color: #CC9933;
+	}
+</style>
+<div class="center-block text-center" style="max-width: 900px">
+	<h3>{TITLE}</h3>
+	<h4>Sent {DATE} By <B><a href="{SITE_URL}?page=userucs&user={HUID}">{NAME}</a></B> - <a href="{SITE_URL}?page=api&cmd=getucsfile&id={UCS_ID}">Downloaded {DOWNCOUNT} times</a> </h4>
+	<div id="gcontainer">
+		<canvas width=640 height=480 id="gamescreen"></canvas>
+		<div id="ucsbuttons">
+			<input type="button" value="Play" class="btn btn-default" onClick="PUMPER.Globals.PumpGame.Play();">
+			<input type="button" value="Pause" class="btn btn-default" onClick="PUMPER.Globals.PumpGame.Pause();">
+			<input type="button" value="+ Speed" class="btn btn-default" onClick="PUMPER.IncreaseSpeed();">
+			<input type="button" value="- Speed" class="btn btn-default" onClick="PUMPER.DecreaseSpeed();">
+		</div>
+		<div id="infohead">
+			BPM: 000 BEAT: 000.000 TIME: 000.000 BLOCK: 000 SPEED: 3x
+		</div>
+		<div id="webglinfo">
+		WebGL <b>Enabled</b><BR>
+		Not Running well? Try the <a href="{SITE_URL}?page=ucsview&id={UCS_ID}&disable_webgl">Canvas Version</a>
+		</div>
+		<div id="levelball">
+			<img src="{SITE_URL}?page=api&cmd=genball&level={LEVEL}&mode={MODE}" width=64 height=64/>
+		</div>
+		<div id="download">
+			<a title="Download UCS" href="{SITE_URL}?page=api&cmd=getucsfile&id={UCS_ID}"><span class="glyphicon glyphicon-download-alt"></span></a>
+		</div>
+		<div id="fblike_frame">
+			<div class="fb-like" data-href="{SITE_URL}?page=ucsview&amp;id={UCS_ID}" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><BR>
+			Views: <B>{VIEWCOUNT}</B> Downs: <B>{DOWNCOUNT}</B>
+		</div>
+	</div>
+	<div id="pumperlog"></div>
+	<div class="fb-comments" data-href="{SITE_URL}?page=ucsview&amp;id={UCS_ID}" data-width="640" data-numposts="5" data-colorscheme="light"></div><BR>
+	This is based on <a href="https://github.com/racerxdl/">Lucas Teske</a> project at GitHub. You can see the source code here: <a href="https://github.com/racerxdl/piuvisual/">https://github.com/racerxdl/piuvisual/</a><BR>
+	Thanks Lucas for this nice project shared with us! Greetings from HUEBR's Team :D <BR> <BR>
+</div>

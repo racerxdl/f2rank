@@ -1,0 +1,42 @@
+<script type="text/javascript">
+	{SONGDATA}
+</script>
+<div class="center-block text-center" style="max-width: 900px">
+	<h3>Select Song</h3>
+	<form class="form-horizontal" role="form" action="{SITE_URL}">	
+	 	<input type="hidden" name="page" value="songrank" class="form-control"/>
+		<div class="form-group">
+			<label for="songid" class="col-sm-2 control-label">Song</label>
+			<div class="col-sm-10">
+				<select class="form-control" name="songid" id="songid">
+{SONGSELECT}
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="songid" class="col-sm-2 control-label">Mode</label>
+			<div class="col-sm-10">
+				<select class="form-control" name="mode" id="mode">
+					<option value="0">Single</option>
+					<option value="64">Single Performance</option>
+					<option value="128">Double</option>
+					<option value="192">Double Performance</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="songid" class="col-sm-2 control-label">Level</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control"  name="level" id="level" placeholder="Put 50 for ??"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="songid" class="col-sm-2 control-label">Your User</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control"  name="userid" id="userid" placeholder="Optional. Put to see your score below the rank"/>
+			</div>
+		</div>
+		<input type="submit" class="form-control" value="Find rank">
+	</form>
+
+</div>

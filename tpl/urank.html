@@ -1,0 +1,104 @@
+<div class="center-block text-center" style="max-width: 900px">
+	<div class="row">
+		<div class="col-md-2">
+			<img src="{SITE_URL}/img/avatar/CH_{AVATAR}.PNG" width=64 height=64/>
+		</div>
+		<div class="col-md-10"><h3>{NAME} <B>({LEVEL})</B></h3></div>
+	</div><BR>
+	<div class="panel panel-info">
+		<div class="panel-heading"><b>User Stuff</b></div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-4"><B>Calories: </B> </div>
+				<div class="col-md-8">{CALORIES} kcal</div>
+			</div>
+			<hr style="margin-top: 3px; margin-bottom: 3px;">
+			<div class="row">
+				<div class="col-md-4"><B>Steps Stomped: </B> </div>
+				<div class="col-md-8">{STEPS}</div>
+			</div>
+			<hr style="margin-top: 3px; margin-bottom: 3px;">
+			<div class="row">
+				<div class="col-md-4"><B>Credits Played: </B> </div>
+				<div class="col-md-8">{GAMES}</div>
+			</div>
+			<hr style="margin-top: 3px; margin-bottom: 3px;">
+			<div class="row">
+				<div class="col-md-4"><B>Experience: </B> </div>
+				<div class="col-md-8">{EXP}</div>
+			</div>
+			<hr style="margin-top: 3px; margin-bottom: 3px;">
+			<div class="row">
+				<div class="col-md-4"><B>Arcade Score: </B> </div>
+				<div class="col-md-8">{SCORE}</div>
+			</div>
+			<hr style="margin-top: 3px; margin-bottom: 3px;">
+			<div class="row">
+				<div class="col-md-4"><B>Missions: </B> </div>
+				<div class="col-md-8">{MISSIONS}</div>
+			</div>
+			<hr style="margin-top: 3px; margin-bottom: 3px;">
+			<div class="row">
+				<div class="col-md-4"><B>Co-op Missions: </B> </div>
+				<div class="col-md-8">{COOP}</div>
+			</div>
+			<hr style="margin-top: 3px; margin-bottom: 3px;">
+			<div class="row">
+				<div class="col-md-4"><B>Battles (W/L/D): </B> </div>
+				<div class="col-md-8">{BATTLE_WINS}/{BATTLE_LOSES}/{BATTLE_DRAWS}</div>
+			</div>
+			<hr style="margin-top: 3px; margin-bottom: 3px">
+			<div class="row">
+				<div class="col-md-4"><B>InGame Ranking: </B> </div>
+				<div class="col-md-8"><a href="{SITE_URL}?page=selector&userid={NAME}">Open</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-warning">
+		<div class="panel-heading"><b>Last Machine Used</b></div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-3"><B>PIU Version: </B> </div>
+				<div class="col-md-9">{VERSION}</div>
+			</div>
+			<hr style="margin-top: 3px; margin-bottom: 3px;">
+			<div class="row">
+				<div class="col-md-3"><B>Processor: </B> </div>
+				<div class="col-md-9">{CPU}</div>
+			</div>
+			<hr style="margin-top: 3px; margin-bottom: 3px;">
+			<div class="row">
+				<div class="col-md-3"><B>Graphics Card: </B> </div>
+				<div class="col-md-9">{GFX}</div>
+			</div>
+			<hr style="margin-top: 3px; margin-bottom: 3px;">
+			<div class="row">
+				<div class="col-md-3"><B>Harddisk: </B> </div>
+				<div class="col-md-9">{HDD}</div>
+			</div>
+			<hr style="margin-top: 3px; margin-bottom: 3px;">
+			<div class="row">
+				<div class="col-md-3"><B>Total Ram: </B> </div>
+				<div class="col-md-9">{TOTALRAM}</div>
+			</div>
+			<hr style="margin-top: 3px; margin-bottom: 3px;">
+		</div>
+	</div>
+	<div class="panel panel-success">
+		<div class="panel-heading"><b>Personal Highscore Table</b></div>
+		<div class="panel-body">
+			<table class="table table-condensed table-striped table-hover">
+			<tr>
+				<th>SongID</th>
+				<th>Name</th>
+				<th>Mode</th>
+				<th>Grade</th>
+				<th>Score</th>
+				<th># plays</th>
+				<th>Sent Date</th>
+			</tr>
+{RANKINGS}
+			</table>
+		</div>
+	</div>
+</div>

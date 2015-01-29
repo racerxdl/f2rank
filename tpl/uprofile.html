@@ -1,0 +1,23 @@
+<div class="center-block text-center" style="max-width: 900px">
+	<div class="row">
+		<h3>Current name: {NAME}</h3>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">Change your name</div>
+		<div class="panel-body">
+			<form role="form"  method="POST">
+				<input type="hidden" name="action" value="changename"/>
+				<input type="hidden" name="page" value="userprofile"/>
+				<div class="input-group">
+					<span class="input-group-addon">Name</span>
+					<input type="text" class="form-control" name="name" placeholder="Your new name">
+					<span class="input-group-btn">
+				  		<button class="btn btn-default" type="submit">Change</button>
+					</span>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+</div>

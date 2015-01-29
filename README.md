@@ -16,12 +16,14 @@ This is the oficial source code of F2Rank page (that was hosted on http://f2rank
 
 There is also a few notes of root files here/folders here:
 
-    *   `database`      (This is the database schema. It uses MySQL Workbench, you can install it and open and see how the database is structured and/or deploy the schema at your mysql server to run F2Rank)
-    *   `facebook`      (This is the facebook assets like logos and stuff. Just take a look and you will know what is it)
-    *   `serverside`    (This is the server-side stuff. I mean, all here is server-side, but those scripts is for posting stuff on facebook by date like the Top 5 users on month)
-    *   `songlist.csv`  (This is the Song List dumped from Fiesta 2 [ I really dont remember which version ]. It's used by all the engine)
-    *   `steplist.csv`  (This is the Chart List dumped from Fiesta 2. It's used by all the engine)
-    
+*   `database`      (This is the database schema. It uses MySQL Workbench, you can install it and open and see how the database is structured and/or deploy the schema at your mysql server to run F2Rank)
+*   `facebook`      (This is the facebook assets like logos and stuff. Just take a look and you will know what is it)
+*   `jspump`        (This is from Pump It Up Visualizer Project)
+*   `jsselector`    (This is from Pump It Up Visualizer Project)
+*   `serverside`    (This is the server-side stuff. I mean, all here is server-side, but those scripts is for posting stuff on facebook by date like the Top 5 users on month)
+*   `songlist.csv`  (This is the Song List dumped from Fiesta 2 [ I really dont remember which version ]. It's used by all the engine)
+*   `steplist.csv`  (This is the Chart List dumped from Fiesta 2. It's used by all the engine)
+
 
 Have fun! :D
 

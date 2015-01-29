@@ -1,3 +1,22 @@
+/*
+Fiesta 2 Unnoficial Ranking
+Copyright (C) 2014  HUEBR's Team
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+*/
+
 JPAK.Base64_Encoding="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";JPAK.ShowMessages=!1;ArrayBuffer.prototype.slice||(ArrayBuffer.prototype.slice=function(a,b){for(var c=ArrayBuffer(b-a),d=new Uint8Array(this),f=new Uint8Array(c),k=0,g=a;g<b;g++)f[k]=d[g],k++;return c});Array.prototype.clean=function(a){for(var b=0;b<this.length;b++)this[b]==a&&(this.splice(b,1),b--);return this};function JPAK(){}window.JPAK=JPAK;
 JPAK.Uint8ArrayToString=function(a){for(var b="",c=0;c<a.byteLength;c++)b+=String.fromCharCode(a[c]);return b};var u8as=JPAK.Uint8ArrayToString;JPAK.String2ArrayBuffer=function(a){for(var b=new ArrayBuffer(a.length),c=new Uint8Array(b),d=0,f=a.length;d<f;d++)c[d]=a.charCodeAt(d)&255;return b};
 JPAK.ArrayBufferToBase64=function(a){var b="";a=new Uint8Array(a);for(var c=a.byteLength,d=c%3,c=c-d,f,k,g,e,h=0;h<c;h+=3)e=a[h]<<16|a[h+1]<<8|a[h+2],f=(e&16515072)>>18,k=(e&258048)>>12,g=(e&4032)>>6,e&=63,b+=JPAK.Base64_Encoding[f]+JPAK.Base64_Encoding[k]+JPAK.Base64_Encoding[g]+JPAK.Base64_Encoding[e];1==d?(e=a[c],b+=JPAK.Base64_Encoding[(e&252)>>2]+JPAK.Base64_Encoding[(e&3)<<4]+"=="):2==d&&(e=a[c]<<8|a[c+1],b+=JPAK.Base64_Encoding[(e&64512)>>10]+JPAK.Base64_Encoding[(e&1008)>>4]+JPAK.Base64_Encoding[(e&
